@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -38,8 +39,9 @@ public class DefaultResizeableMatrix<T> implements ResizeableMatrix<T> {
       List<List<Node<T>>> tempMatrix = new ArrayList<>();
       for (int row = 0; row < width; row += 1) {
         List<Node<T>> tempColumn = new ArrayList<>();
+        tempMatrix.add(tempColumn);
         Node<T> currentLeftNode = new Node<>();
-        for (int column = 0; row < column; column += 1) {
+        for (int column = 0; column < height; column += 1) {
           Node<T> currentNode = new Node<>();
           tempColumn.add(currentNode);
 
@@ -63,9 +65,10 @@ public class DefaultResizeableMatrix<T> implements ResizeableMatrix<T> {
             currentNode.setLeftNeighbor(currentLeftNode);
             currentLeftNode = currentNode;
           }
-
         }
       }
+      System.out.print(Arrays.toString(new String[5]));
+      System.out.print(tempMatrix.get(0).size());
       upperLeftCorner = tempMatrix.get(0).get(0);
     }
   }
@@ -86,7 +89,7 @@ public class DefaultResizeableMatrix<T> implements ResizeableMatrix<T> {
 
   @Override
   public T[][] toArrayMatrix() {
-    return new T[0][];
+    return null;
   }
 
   @Override
@@ -96,22 +99,22 @@ public class DefaultResizeableMatrix<T> implements ResizeableMatrix<T> {
 
   @Override
   public T[] getRow(int row) {
-    return new T[0];
+    return null;
   }
 
   @Override
   public T[] getColumn(int column) {
-    return new T[0];
+    return null;
   }
 
   @Override
   public T[] getRow(int row, int startingIndex) {
-    return new T[0];
+    return null;
   }
 
   @Override
   public T[] getColumn(int column, int startingIndex) {
-    return new T[0];
+    return null;
   }
 
   @Override

@@ -60,4 +60,10 @@ public class Node<T> {
   public void setDownNeighbor(Node<T> downNeighbor) {
     this.downNeighbor = downNeighbor;
   }
+
+  @Override
+  public String toString() {
+    return value.toString();
+  }
 }
+
